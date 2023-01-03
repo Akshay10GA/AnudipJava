@@ -31,7 +31,7 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int customer_id;
-	
+
 // creating columns for table customer
 
 	@NotBlank(message = "Customer Name can't be empty")

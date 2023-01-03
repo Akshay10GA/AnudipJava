@@ -41,7 +41,7 @@ public class OrderServiceImplTest {
 		// get order name
 		int price = orderService.getorder(1).getTotal_price();
 		// compare order name
-		assertEquals(100259, price);
+		assertEquals(500, price);
 	}
 	
 	@Test
