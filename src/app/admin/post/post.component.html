@@ -1,0 +1,10 @@
+<p>Registration..</p>
+<label>First Name :&nbsp;&nbsp;</label><input type="text" [formControl]="first_name" ><br><br>
+<label>Last Name :&nbsp;&nbsp;</label><input type="text" [formControl]="last_name" ><br><br>
+<label>Gender :&nbsp;&nbsp;</label><input type="radio" name="Male" id="male" [formControl]="gender">Male&nbsp;&nbsp;
+                                    <input type="radio" name="Female" id="female" [formControl]="gender">Female<br><br>
+<label>Password :&nbsp;&nbsp;</label><input type="password" [formControl]="password" ><br><br>
+<label>Confirm Password :&nbsp;</label><input type="password" [formControl]="confirm_password" ><br><br>
+
+
+<button type="submit" (click)="register()">Register</button>
