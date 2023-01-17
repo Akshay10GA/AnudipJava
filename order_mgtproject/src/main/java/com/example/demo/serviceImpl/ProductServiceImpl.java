@@ -52,7 +52,7 @@ public class ProductServiceImpl implements ProductService {
 
 // To update product details	
 	@Override
-	public String updateProduct(int id, ProductDTO pdto) {
+	public Product updateProduct(int id, ProductDTO pdto) {
 Product p = pr.findById(id).get();
 		
 		Product p1 = Product.builder()
@@ -61,7 +61,7 @@ Product p = pr.findById(id).get();
 		p.setProduct_name(p1.getProduct_name());
 		p.setProduct_quantity(p1.getProduct_quantity());
 		pr.save(p1);
-		return "Product updated successfully.";
+		return pr.save(p1);
 	}
 
 // To delete all product

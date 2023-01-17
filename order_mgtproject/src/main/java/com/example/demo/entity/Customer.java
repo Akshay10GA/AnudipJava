@@ -22,14 +22,14 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 // creates table in database with name CUSTOMER_DETAILS
-@Table(name = "CUSTOMER_DETAILS")
+@Table(name = "CUSTOMERS")
 public class Customer {
 	
 // instance variable for customer entity
 	
 // customer_id is auto generated
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int customer_id;
 
 // creating columns for table customer

@@ -19,7 +19,7 @@ public class CustomerDTO {
 // copy of instance variable created
 
 // taking validation on entity variable using @valid Annotation
-
+	
 	@NotBlank(message = "Customer Name can't be empty")
 	@NotNull(message = "Customer Name  can't be  null")	
 	@Size(min = 3, max = 20, message = "Customer_Name must be within 3-20 characters")

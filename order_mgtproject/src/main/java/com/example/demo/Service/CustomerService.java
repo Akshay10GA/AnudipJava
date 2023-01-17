@@ -14,6 +14,6 @@ public interface CustomerService {
 	public Customer getCustomer(int id);
 	public List<Customer> getAllCustomers();
 	public String deleteCustomer(int id);
-	public String updateCustomer(int id,CustomerDTO cdto);
+	public Customer updateCustomer(int id,CustomerDTO cdto);
 	public String deleteAllCustomers();
 }

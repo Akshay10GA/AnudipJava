@@ -13,7 +13,7 @@ public interface OrderService {
 	public Order getorder(int id);
 	public List<Order> getAllOrders();
 	public String deleteOrder(int id);
-	public String updateOrder(int id,OrderDTO ort);
+	public Order updateOrder(int id,OrderDTO ort);
 	public String deleteAllOrders();
 	
 }

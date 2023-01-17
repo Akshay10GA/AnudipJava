@@ -17,7 +17,7 @@ public class OrderServiceimpl implements OrderService {
 	@Autowired
 	OrderRepository or;
 
-	// Crud Operations
+	// Crude Operations
 		// Creating Order
 	@Override
 	public Order createOrder(OrderDTO ort) {
@@ -49,7 +49,7 @@ public class OrderServiceimpl implements OrderService {
 
 // To update order,customer,product details	
 	@Override
-	public String updateOrder(int id, OrderDTO ort) {
+	public Order updateOrder(int id, OrderDTO ort) {
 		Order o = or.findById(id).get();
 		
 		Order o1 = Order.builder()
@@ -64,9 +64,9 @@ public class OrderServiceimpl implements OrderService {
 		o.setCustomer(o1.getCustomer());
 		o.setProduct(o1.getProduct());
 		
-		or.save(o1);
+//		or.save(o1);
 		
-		return "Order updated successfully.";
+		return or.save(o1);
 	}
 
 // To delete all order	

@@ -54,7 +54,7 @@ public class OrderDTO {
 	
 	private Customer customer;
 	
-	private List<Product> product;
+	private Product product;
 	
 	
 }

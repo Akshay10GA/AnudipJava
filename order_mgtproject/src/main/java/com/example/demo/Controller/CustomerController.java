@@ -7,12 +7,14 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.Service.CustomerService;
 import com.example.demo.dto.CustomerDTO;
@@ -20,6 +22,7 @@ import com.example.demo.entity.Customer;
 import com.example.demo.exception.CustomerNotFoundException;
 
 @RestController
+@CrossOrigin
 public class CustomerController {
 
 // creating instance for Customer Service
@@ -28,7 +31,7 @@ public class CustomerController {
 	CustomerService cs;
 
 // Entering customer details throgh  ordercontroller
-	/*@PostMapping("/customer")
+	@PostMapping("/customer")
 	public  ResponseEntity<Customer> createCustomer(@RequestBody @Valid CustomerDTO cdto )
 	{	 
 	Customer cust=cs.createCustomer(cdto);
@@ -36,7 +39,7 @@ public class CustomerController {
 			return new ResponseEntity<Customer>(cust, HttpStatus.CREATED);
 		
 	   return new ResponseEntity<Customer>(cust, HttpStatus.BAD_REQUEST);
-	}*/
+	}
 	
 //	
 	@GetMapping("/customer/{id}")
@@ -67,7 +70,7 @@ public class CustomerController {
 	}
 	
 	@PutMapping("/customer/{id}")
-	public String updateCustomer(@PathVariable("id") int id,@RequestBody @Valid CustomerDTO cdto)
+	public Customer updateCustomer(@PathVariable("id") int id,@RequestBody @Valid CustomerDTO cdto)
 	{
 		return cs.updateCustomer(id, cdto);
 	}

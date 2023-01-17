@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -26,13 +27,13 @@ import lombok.Builder;
 @Builder
 @Entity
 // creates table in database with name ORDER_DETAILS
-@Table(name = "ORDER_DETAILS")
+@Table(name = "ORDERS")
 public class Order {
 // instance variable for customer entity
 	
 // order_id is auto generated
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer order_id;
 	
 	private String order_name;
@@ -47,13 +48,12 @@ public class Order {
 	
 // this connect with Customer entity using one to one mapping
 // relationship
-	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Customer customer;
 
 // this connect with Product entity using one to many mapping
 // relationship	
-	@OneToMany(cascade = CascadeType.ALL)
-	private List<Product> product;
+	@OneToOne(cascade = CascadeType.ALL)
+	private Product product;
 	
 }

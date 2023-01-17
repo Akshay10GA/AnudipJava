@@ -41,7 +41,7 @@ public class CustomerServiceImpl implements CustomerService {
 		return cr.findAll();
 	}
 	
-// To delate  particular customer
+// To delete  particular customer
 	@Override
 	public String deleteCustomer(int id) {
 		cr.deleteById(id);
@@ -50,7 +50,7 @@ public class CustomerServiceImpl implements CustomerService {
 	
 // To update customer details
 	@Override
-	public String updateCustomer(int id, CustomerDTO cdto) {
+	public Customer updateCustomer(int id, CustomerDTO cdto) {
 		Customer cust = cr.findById(id).get();
 		
 		Customer cust1 = Customer.builder()
@@ -64,7 +64,7 @@ public class CustomerServiceImpl implements CustomerService {
 		cust.setCustomer_address(cust1.getCustomer_address());
 		cust.setPin(cust1.getPin());
 		cr.save(cust1);
-		return "Customer updated successfully.";
+		return cr.save(cust1);
 	}
 
 // To delete all customer 

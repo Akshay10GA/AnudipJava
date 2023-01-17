@@ -1,5 +1,7 @@
 package com.example.demo.dto;
 
+import java.io.Serializable;
+
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
@@ -14,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class ProductDTO {
+public class ProductDTO implements Serializable{
 // copy of instance variable created 
 	
 // taking validation on entity variable using @valid Annotation
@@ -31,5 +33,5 @@ public class ProductDTO {
 	@Digits(fraction = 0, integer = 7)
 	@DecimalMax(value = "1000000.00")
 	@DecimalMin(value = "0.00")
-	int product_price;
+	private int product_price;
 }

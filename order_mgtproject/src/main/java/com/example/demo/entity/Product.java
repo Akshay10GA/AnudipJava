@@ -25,14 +25,14 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 // creates table in databas with name PRODUCT_DETAILS
-@Table(name = "PRODUCT_DETAILS")
+@Table(name = "PRODUCTS")
 public class Product{
 	
 // instance variable for product entity
 	
 // Product_id is auto generated
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	private int product_id;
 // creating columns for table Product	
 	@NotBlank(message = "Product_Name can't be empty")
